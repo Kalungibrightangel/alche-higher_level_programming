@@ -1,0 +1,1 @@
+This directory contains scripts on Python - Everything is object.
