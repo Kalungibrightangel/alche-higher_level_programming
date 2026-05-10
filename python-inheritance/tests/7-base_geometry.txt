@@ -46,13 +46,15 @@ age must be an integer
 
 >>> try:
 ...     bg.integer_validator()
-... except TypeError:
-...     pass
+... except TypeError as e:
+...     print(type(e))
+<class 'TypeError'>
 
 >>> try:
 ...     bg.integer_validator("age")
-... except TypeError:
-...     pass
+... except TypeError as e:
+...     print(type(e))
+<class 'TypeError'>
 
 >>> try:
 ...     bg.integer_validator("age", {3, 4})
