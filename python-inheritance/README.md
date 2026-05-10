@@ -1,0 +1,1 @@
+This read me contains scripts on inheritance in python.
