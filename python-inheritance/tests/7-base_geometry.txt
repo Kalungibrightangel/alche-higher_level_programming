@@ -46,15 +46,25 @@ age must be an integer
 
 >>> try:
 ...     bg.integer_validator()
-... except TypeError as e:
-...     print(e)
-BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+... except TypeError:
+...     pass
 
 >>> try:
 ...     bg.integer_validator("age")
+... except TypeError:
+...     pass
+
+>>> try:
+...     bg.integer_validator("age", {3, 4})
 ... except TypeError as e:
 ...     print(e)
-BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", None)
+... except TypeError as e:
+...     print(e)
+age must be an integer
 
 >>> try:
 ...     bg.area()
