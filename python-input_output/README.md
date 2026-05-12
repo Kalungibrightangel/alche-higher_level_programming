@@ -1,0 +1,1 @@
+Scripts on input output in python
