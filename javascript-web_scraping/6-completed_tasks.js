@@ -9,19 +9,18 @@ request.get(process.argv[2], (error, response, body) => {
   }
 
   const todos = JSON.parse(body);
-  const completedTasks = {};
+  const users = {};
 
   todos.forEach((task) => {
     if (task.completed) {
-      if (!completedTasks[task.userId]) {
-        completedTasks[task.userId] = 0;
+      if (!users[task.userId]) {
+        users[task.userId] = 0;
       }
-
-      completedTasks[task.userId] += 1;
+      users[task.userId] += 1;
     }
   });
 
-  Object.keys(completedTasks).forEach((userId) => {
-    console.log(`${userId}: ${completedTasks[userId]}`);
+  Object.keys(users).forEach((userId) => {
+    console.log(`${userId}: ${users[userId]}`);
   });
 });
