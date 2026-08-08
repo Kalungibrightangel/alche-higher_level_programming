@@ -16,11 +16,10 @@ request.get(process.argv[2], (error, response, body) => {
       if (!users[task.userId]) {
         users[task.userId] = 0;
       }
+
       users[task.userId] += 1;
     }
   });
 
-  Object.keys(users).forEach((userId) => {
-    console.log(`${userId}: ${users[userId]}`);
-  });
+  console.log(users);
 });
